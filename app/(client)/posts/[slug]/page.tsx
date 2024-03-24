@@ -88,7 +88,7 @@ const richTextStyles = `
   prose-code
 `
 
-const ImageComponent = ({ value }) => {
+const ImageComponent = ({ value }: any) => {
   return (
     <Image
       src={urlForImage(value)}

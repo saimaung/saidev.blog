@@ -24,9 +24,8 @@ async function getAllPostsByTag(tag:string) {
   return posts;
 }
 
-const page = async ({params}) => {
+const page = async ({params}: any) => {
   const postsByTag: Array<Post> = await getAllPostsByTag(params.slug);
-  console.log(postsByTag);
   return (
     <div>
       <Header title={params?.slug.replace(/[-]/g, ' ')} />
