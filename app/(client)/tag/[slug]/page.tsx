@@ -1,8 +1,7 @@
 import { Post } from "@/app/utils/interface";
 import Header from "@/components/Header"
 import Posts from "@/components/Posts";
-import { client } from "@/sanity/lib/client"
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import { client } from "@/sanity/lib/client";
 
 
 async function getAllPostsByTag(tag:string) {
@@ -25,7 +24,7 @@ async function getAllPostsByTag(tag:string) {
   return posts;
 }
 
-const page = async ({params}: Params) => {
+const page = async ({params}) => {
   const postsByTag: Array<Post> = await getAllPostsByTag(params.slug);
   console.log(postsByTag);
   return (
